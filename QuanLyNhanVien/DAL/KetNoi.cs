@@ -77,7 +77,7 @@ namespace QuanLyNhanVien.DAL
                             i++;
                         }
                     }
-                    Console.WriteLine("Chỗ này thêm mới cốnle ưrtie linecho đẹp hơn về ặt coding");
+                    Console.WriteLine("This is console writeline");
                 }
                 data = command.ExecuteNonQuery();
                 connection.Close();
