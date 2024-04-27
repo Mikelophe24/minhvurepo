@@ -77,6 +77,7 @@ namespace QuanLyNhanVien.DAL
                             i++;
                         }
                     }
+                    Console.WriteLine("This is console writeline 123");
                 }
                 data = command.ExecuteNonQuery();
                 connection.Close();
