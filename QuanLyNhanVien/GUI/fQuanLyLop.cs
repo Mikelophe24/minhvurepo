@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyNhanVien.BLL;
 
 namespace QuanLyNhanVien.GUI
 {
@@ -17,83 +18,18 @@ namespace QuanLyNhanVien.GUI
             InitializeComponent();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnThem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnLamMoi_Click(object sender, EventArgs e)
         {
-
+            dgvLop.DataSource = BLL__Lop.Instance.DanhSach();
+            cmbMaKhoa.DataSource = BLL_Khoa.Instance.DanhSach();
+            cmbMaKhoa.DisplayMember = "TenKhoa";
+            cmbMaKhoa.ValueMember = "MaKhoa";
+            
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void fQuanLyLop_Load(object sender, EventArgs e)
         {
-
-        }
-
-        private void txtTenLop_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtMaLop_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtID_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void numSoLuong_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvLop_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbMaKhoa_SelectedIndexChanged(object sender, EventArgs e)
-        {
+            btnLamMoi.PerformClick();
 
         }
     }

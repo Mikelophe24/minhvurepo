@@ -39,8 +39,5 @@ namespace QuanLyNhanVien.DAL
         {
             return KetNoi.Instance.ExcuteQuery("select * from Khoa");
         }
-
-       
-
     }
 }

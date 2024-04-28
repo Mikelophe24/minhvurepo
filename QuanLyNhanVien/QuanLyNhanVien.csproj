@@ -48,8 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\BLL _Lop.cs" />
     <Compile Include="BLL\BLL_Khoa.cs" />
     <Compile Include="BLL\BLL_TaiKhoan.cs" />
+    <Compile Include="DAL\DAL_ Lop.cs" />
     <Compile Include="DAL\DAL_Khoa.cs" />
     <Compile Include="DAL\DAL_TaiKhoan.cs" />
     <Compile Include="DAL\KetNoi.cs" />
