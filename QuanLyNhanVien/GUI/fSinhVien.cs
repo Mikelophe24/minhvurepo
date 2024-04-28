@@ -17,6 +17,14 @@ namespace QuanLyNhanVien.GUI
             InitializeComponent();
         }
 
+        private void fSinhVien_Load(object sender, EventArgs e)
+        {
+            if (HeThong.LOAITAIKHOAN != "Quản trị")
+                btnQuanLy.Visible = false;
+            else
+                btnQuanLy.Visible = true;
+        }
+
         private void qToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fQuanLyTaiKhoan f = new fQuanLyTaiKhoan();
@@ -73,6 +81,11 @@ namespace QuanLyNhanVien.GUI
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new fDoiMatKhau().ShowDialog();
+        }
+
+        private void đăngXuấtToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 

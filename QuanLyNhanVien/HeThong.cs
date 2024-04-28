@@ -9,6 +9,10 @@ namespace QuanLyNhanVien
 {
     public class HeThong
     {
+
+        public static string TENDANGNHAP = "";
+        public static string LOAITAIKHOAN = "";
+
         public static string Hash(string text)
         {
             SHA1Managed sha1 = new SHA1Managed();

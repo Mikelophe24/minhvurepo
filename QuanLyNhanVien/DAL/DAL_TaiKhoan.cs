@@ -26,10 +26,15 @@ namespace QuanLyNhanVien.DAL
             return KetNoi.Instance.ExcuteNonQuery(sql, new object[] { ten, matkhau, loai });
         }
 
-        public bool Sua(string ten, string matkhau, string loai, int id)
+        public bool Sua_Het(string ten, string matkhau, string loai, int id)
         {
-            string sql = "update TaiKhoan set TenDangNhap= @TenDangNhap , MatKhau = @MatKhau, LoaiTaiKhoan = @LoaiTaiKhoan where id= @id";
+            string sql = "update TaiKhoan set TenDangNhap = @TenDangNhap , MatKhau = @MatKhau , LoaiTaiKhoan = @LoaiTaiKhoan where id = @id";
             return KetNoi.Instance.ExcuteNonQuery(sql, new object[] { ten, matkhau, loai, id });
+        }
+        public bool Khong_Sua_Mat_Khau(string ten, string loai, int id)
+        {
+            string sql = "update TaiKhoan set TenDangNhap = @TenDangNhap , LoaiTaiKhoan = @LoaiTaiKhoan where id = @id";
+            return KetNoi.Instance.ExcuteNonQuery(sql, new object[] { ten, loai, id });
         }
 
         public bool Xoa(int id)
@@ -42,5 +47,17 @@ namespace QuanLyNhanVien.DAL
         {
             return KetNoi.Instance.ExcuteQuery("select * from TaiKhoan");
         }
+
+        public DataTable DangNhap(string ten, string matkhau)
+        {
+            string sql = "select * from TaiKhoan where TenDangNhap = @TenDangNhap and MatKhau = @MatKhau";
+            return KetNoi.Instance.ExcuteQuery(sql, new object[] { ten, matkhau });
+        }
+        public bool DoiMatKhau(string ten, string matkhaumoi, string matkhaucu)
+        {
+            string sql = "update TaiKhoan set MatKhau  = @MatKhauMoi where TenDangNhap = @TenDangNhap and MatKhau = @MatKhauCu";
+            return KetNoi.Instance.ExcuteNonQuery(sql, new object[] { matkhaumoi, ten, matkhaucu });
+        }
+
     }
 }

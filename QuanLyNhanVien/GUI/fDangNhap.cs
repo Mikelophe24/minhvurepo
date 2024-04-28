@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyNhanVien.BLL;
 using QuanLyNhanVien.GUI;
 
 namespace QuanLyNhanVien
@@ -18,14 +19,27 @@ namespace QuanLyNhanVien
             InitializeComponent();
         }
 
-      
+
+
+
+
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            fSinhVien f = new fSinhVien();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
+            string tendangnhap = txbTenDangNhap.Text;
+            string matkhau = txbMatKhau.Text;
 
+            if (BLL_TaiKhoan.Instance.DangNhap(tendangnhap, matkhau) == true)
+            {
+                txbMatKhau.Clear();
+                fSinhVien f = new fSinhVien();
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("ten dang nhap hoac mat khau khong dung...", "thong bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
         }
     }

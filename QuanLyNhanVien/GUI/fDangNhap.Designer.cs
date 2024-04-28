@@ -43,7 +43,6 @@
             this.label1.Size = new System.Drawing.Size(98, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên đăng nhập";
-      //    this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -61,6 +60,7 @@
             this.txbTenDangNhap.Name = "txbTenDangNhap";
             this.txbTenDangNhap.Size = new System.Drawing.Size(296, 26);
             this.txbTenDangNhap.TabIndex = 0;
+            this.txbTenDangNhap.Text = "minh";
             // 
             // txbMatKhau
             // 
@@ -69,6 +69,7 @@
             this.txbMatKhau.Name = "txbMatKhau";
             this.txbMatKhau.Size = new System.Drawing.Size(296, 26);
             this.txbMatKhau.TabIndex = 1;
+            this.txbMatKhau.Text = "123456";
             // 
             // btnDangNhap
             // 
@@ -98,7 +99,6 @@
             this.Name = "fDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
-     //     this.Load += new System.EventHandler(this.fDangNhap_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

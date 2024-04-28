@@ -16,5 +16,11 @@ namespace QuanLyNhanVien.GUI
         {
             InitializeComponent();
         }
+
+        private void fThongTinChiTiet_Load(object sender, EventArgs e)
+        {
+            txbTenDangNhap.Text = HeThong.TENDANGNHAP;
+            txbLoaiTaiKhoan.Text = HeThong.LOAITAIKHOAN;
+        }
     }
 }

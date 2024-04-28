@@ -103,11 +103,12 @@
             this.Controls.Add(this.txbMatKhau);
             this.Controls.Add(this.txbTenDangNhap);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fThongTinChiTiet";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Thông tin chi tiết";
+            this.Load += new System.EventHandler(this.fThongTinChiTiet_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

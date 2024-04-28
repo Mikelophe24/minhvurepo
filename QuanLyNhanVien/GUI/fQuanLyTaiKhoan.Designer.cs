@@ -104,6 +104,7 @@
             this.btnXoa.TabStop = false;
             this.btnXoa.Text = "XÓA";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -114,6 +115,7 @@
             this.btnSua.TabStop = false;
             this.btnSua.Text = "SỬA";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -217,6 +219,7 @@
             this.dgvTaiKhoan.Size = new System.Drawing.Size(671, 318);
             this.dgvTaiKhoan.TabIndex = 1;
             this.dgvTaiKhoan.TabStop = false;
+            this.dgvTaiKhoan.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTaiKhoan_CellContentClick_1);
             // 
             // Column1
             // 
@@ -262,6 +265,7 @@
             this.Name = "fQuanLyTaiKhoan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý tài khoản";
+            this.Load += new System.EventHandler(this.fQuanLyTaiKhoan_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
