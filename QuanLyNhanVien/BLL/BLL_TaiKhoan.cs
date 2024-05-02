@@ -28,13 +28,13 @@ namespace QuanLyNhanVien.BLL
 
         public bool Them(string ten, string matkhau, string loai)
         {
-            matkhau = HeThong.Hash(matkhau);
+          //  matkhau = HeThong.Hash(matkhau);
             return DAL_TaiKhoan.Instance.Them(ten, matkhau, loai);
         }
 
         public bool SuaHet(string ten, string matkhau, string loai, int id)
         {
-            matkhau = HeThong.Hash(matkhau);
+           // matkhau = HeThong.Hash(matkhau);
             return DAL_TaiKhoan.Instance.Sua_Het(ten, matkhau, loai, id);
         }
 
@@ -50,13 +50,14 @@ namespace QuanLyNhanVien.BLL
 
         public bool DangNhap(string ten, string matkhau)
         {
-            matkhau = HeThong.Hash(matkhau);
+           // matkhau = HeThong.Hash(matkhau);
 
             DataTable dulieu = DAL_TaiKhoan.Instance.DangNhap(ten, matkhau);
 
             if (dulieu.Rows.Count > 0)
             {
                 HeThong.TENDANGNHAP = ten;
+                HeThong.MATKHAU = matkhau;
                 HeThong.LOAITAIKHOAN = dulieu.Rows[0]["LoaiTaiKhoan"].ToString().Trim();
                 return true;
             }
@@ -68,8 +69,8 @@ namespace QuanLyNhanVien.BLL
 
         public bool DoiMatKhau(string tendangnhap, string matkhaumoi, string matkhaucu)
         {
-            matkhaucu = HeThong.Hash(matkhaucu);
-            matkhaumoi = HeThong.Hash(matkhaumoi);
+           // matkhaucu = HeThong.Hash(matkhaucu);
+           // matkhaumoi = HeThong.Hash(matkhaumoi);
             return DAL_TaiKhoan.Instance.DoiMatKhau(tendangnhap, matkhaumoi, matkhaucu);
         }
 

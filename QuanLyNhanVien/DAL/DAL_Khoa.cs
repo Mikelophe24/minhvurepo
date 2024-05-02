@@ -31,13 +31,13 @@ namespace QuanLyNhanVien.DAL
       
         public bool Xoa(int id)
         {
-            string sql = " delete from Khoa where id = @id";
+            string sql = " delete from Khoa where id = @id ";
             return KetNoi.Instance.ExcuteNonQuery(sql, new object[] { id });
         }
 
         public DataTable DanhSach()
         {
-            return KetNoi.Instance.ExcuteQuery("select * from Khoa");
+            return KetNoi.Instance.ExcuteQuery("select * from Khoa ");
         }
     }
 }

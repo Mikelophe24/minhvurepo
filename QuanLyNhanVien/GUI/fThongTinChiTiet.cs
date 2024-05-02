@@ -19,8 +19,19 @@ namespace QuanLyNhanVien.GUI
 
         private void fThongTinChiTiet_Load(object sender, EventArgs e)
         {
-            txbTenDangNhap.Text = HeThong.TENDANGNHAP;
+            txbDangNhap.Text = HeThong.TENDANGNHAP;
+            txbMatKhau.Text = HeThong.MATKHAU;
             txbLoaiTaiKhoan.Text = HeThong.LOAITAIKHOAN;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbMatKhau_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

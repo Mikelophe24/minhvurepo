@@ -29,9 +29,9 @@ namespace QuanLyNhanVien.BLL
             return DAL_Khoa.Instance.Them(makhoa , tenkhoa);
         }
 
-        public bool Sua(string makhoa, string tenkhoa,int id)
+        public bool Sua(string makhoa, string tenkhoa, int id)
         {
-            return DAL_Khoa.Instance.Sua(makhoa, tenkhoa,id);
+            return DAL_Khoa.Instance.Sua(makhoa, tenkhoa, id);
         }
         public bool Xoa(int id)
         {

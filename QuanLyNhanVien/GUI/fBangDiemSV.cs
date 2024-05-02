@@ -16,5 +16,30 @@ namespace QuanLyNhanVien.GUI
         {
             InitializeComponent();
         }
+
+        private void fBangDiemSV_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtDiemThi_TextChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtDiemThi.Text))
+            {
+                if (int.TryParse(txtDiemLop.Text, out int score))
+                {
+                    if (score > 10)
+                    {
+                        MessageBox.Show("Điểm trên lớp phải nhỏ hơn 10, vui lòng nhập lại!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        txtDiemThi.Text = ""; // Clear the textbox if the input is invalid
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng nhập một số nguyên hợp lệ!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtDiemThi.Text = ""; // Clear the textbox if the input is not a valid integer
+                }
+            }
+        }
     }
 }

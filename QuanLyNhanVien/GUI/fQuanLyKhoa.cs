@@ -55,7 +55,7 @@ namespace QuanLyNhanVien.GUI
             }
         }
 
-        private void dgvKhoa_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvKhoa_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txbID.Text = dgvKhoa.CurrentRow.Cells[0].Value.ToString().Trim();
             txbMaKhoa.Text= dgvKhoa.CurrentRow.Cells[1].Value.ToString().Trim();
@@ -91,11 +91,19 @@ namespace QuanLyNhanVien.GUI
             string tenkhoa = txbTenKhoa.Text;
 
             if (MessageBox.Show("Bạn có muốn xóa khoa" + tenkhoa + " Khong?", "thong báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                if (BLL_Khoa.Instance.Xoa(id) == true)
-                    btnLamMoi.PerformClick();
+            {            
+                    if (BLL_Khoa.Instance.Xoa(id) == true)
+                        btnLamMoi.PerformClick();
+                
             }
 
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            fSinhVien f5 = new fSinhVien();
+            this.Hide();
+            f5.ShowDialog();
         }
     }
 }

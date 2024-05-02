@@ -71,11 +71,11 @@ namespace QuanLyNhanVien.GUI
                                         
         }
 
-        private void dgvTaiKhoan_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void dgvTaiKhoan_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             txbID.Text = dgvTaiKhoan.CurrentRow.Cells[0].Value.ToString().Trim();
             txbTenDangNhap.Text= dgvTaiKhoan.CurrentRow.Cells[1].Value.ToString().Trim();
-            //txbMatKhau.Text = dgvTaiKhoan.CurrentRow.Cells[2].Value.ToString().Trim();
+            txbMatKhau.Text = dgvTaiKhoan.CurrentRow.Cells[2].Value.ToString().Trim();
             cmbLoaiTaiKhoan.SelectedItem = dgvTaiKhoan.CurrentRow.Cells[3].Value.ToString();
         }
 

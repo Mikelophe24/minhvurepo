@@ -48,24 +48,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLL\BLL _Lop.cs" />
+    <Compile Include="BLL\BLL_Diem.cs" />
+    <Compile Include="BLL\BLL_Lop.cs" />
+    <Compile Include="BLL\BLL_CoVanHocTap.cs" />
     <Compile Include="BLL\BLL_Khoa.cs" />
+    <Compile Include="BLL\BLL_MonHoc.cs" />
+    <Compile Include="BLL\BLL_SinhVien.cs" />
     <Compile Include="BLL\BLL_TaiKhoan.cs" />
-    <Compile Include="DAL\DAL_ Lop.cs" />
+    <Compile Include="DAL\DAL_Lop.cs" />
+    <Compile Include="DAL\DAL_CoVanHocTap.cs" />
     <Compile Include="DAL\DAL_Khoa.cs" />
+    <Compile Include="DAL\DAL_MonHoc.cs" />
+    <Compile Include="DAL\DAL_Diem.cs" />
+    <Compile Include="DAL\DAL_SinhVien.cs" />
     <Compile Include="DAL\DAL_TaiKhoan.cs" />
     <Compile Include="DAL\KetNoi.cs" />
+    <Compile Include="ds_QLSVDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ds_QLSVDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GUI\fBangDiemSV.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\fBangDiemSV.Designer.cs">
       <DependentUpon>fBangDiemSV.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\fCoVanHocTap.cs">
+    <Compile Include="GUI\fQuanLyCoVanHocTap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\fCoVanHocTap.Designer.cs">
-      <DependentUpon>fCoVanHocTap.cs</DependentUpon>
+    <Compile Include="GUI\fQuanLyCoVanHocTap.Designer.cs">
+      <DependentUpon>fQuanLyCoVanHocTap.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\fDangNhap.cs">
       <SubType>Form</SubType>
@@ -122,13 +135,14 @@
       <DependentUpon>fThongTinChiTiet.cs</DependentUpon>
     </Compile>
     <Compile Include="HeThong.cs" />
+    <Compile Include="Models\Student.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\fBangDiemSV.resx">
       <DependentUpon>fBangDiemSV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\fCoVanHocTap.resx">
-      <DependentUpon>fCoVanHocTap.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\fQuanLyCoVanHocTap.resx">
+      <DependentUpon>fQuanLyCoVanHocTap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\fDangNhap.resx">
       <DependentUpon>fDangNhap.cs</DependentUpon>
@@ -166,6 +180,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="ds_QLSVDataSet.xsc">
+      <DependentUpon>ds_QLSVDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ds_QLSVDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ds_QLSVDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ds_QLSVDataSet.xss">
+      <DependentUpon>ds_QLSVDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

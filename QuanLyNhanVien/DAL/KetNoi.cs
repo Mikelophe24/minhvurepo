@@ -59,30 +59,38 @@ namespace QuanLyNhanVien.DAL
         // thêm , sửa , xóa
         public bool ExcuteNonQuery(string query, object[] parameter = null)
         {
-            int data = 0;
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                connection.Open();
-                SqlCommand command = new SqlCommand(query, connection);
-                if (parameter != null)
+                int data = 0;
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string[] listParams = query.Split(' ');
-
-                    int i = 0;
-                    foreach (string item in listParams)
+                    connection.Open();
+                    SqlCommand command = new SqlCommand(query, connection);
+                    if (parameter != null)
                     {
-                        if (item.Contains('@'))
+                        string[] listParams = query.Split(' ');
+
+                        int i = 0;
+                        foreach (string item in listParams)
                         {
-                            command.Parameters.AddWithValue(item, parameter[i]);
-                            i++;
+                            if (item.Contains('@'))
+                            {
+                                command.Parameters.AddWithValue(item, parameter[i]);
+                                i++;
+                            }
                         }
                     }
-                    Console.WriteLine("This is console writeline 123");
+                    data = command.ExecuteNonQuery();
+                    connection.Close();
                 }
-                data = command.ExecuteNonQuery();
-                connection.Close();
+                return data > 0;
             }
-            return data > 0;
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Có lỗi xảy ra: {ex}");
+                return false;
+            }
+           
         }
     }
 }

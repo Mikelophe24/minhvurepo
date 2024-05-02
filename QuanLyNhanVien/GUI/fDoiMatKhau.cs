@@ -31,8 +31,25 @@ namespace QuanLyNhanVien.GUI
                     MessageBox.Show("Đổi mật khẩu thành công  ", "thông báo ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
                     MessageBox.Show("Đổi mật khẩu thât bại! ", "thông báo ", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
+              
             }
+
+            this.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fDoiMatKhau_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }

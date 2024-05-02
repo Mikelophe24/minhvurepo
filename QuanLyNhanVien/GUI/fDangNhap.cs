@@ -25,12 +25,12 @@ namespace QuanLyNhanVien
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            string tendangnhap = txbTenDangNhap.Text;
-            string matkhau = txbMatKhau.Text;
+            string tendangnhap = txbTenDangNhap1.Text;
+            string matkhau = txbMatKhau1.Text;
 
             if (BLL_TaiKhoan.Instance.DangNhap(tendangnhap, matkhau) == true)
             {
-                txbMatKhau.Clear();
+                txbMatKhau1.Clear();
                 fSinhVien f = new fSinhVien();
                 this.Hide();
                 f.ShowDialog();
@@ -40,6 +40,35 @@ namespace QuanLyNhanVien
             {
                 MessageBox.Show("ten dang nhap hoac mat khau khong dung...", "thong bao", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fDangNhap_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txbTenDangNhap_KeyDown(object sender, KeyEventArgs e)
+        {
+            //if (e.KeyCode == Keys.Enter)
+            //{
+            //    // Chuyển focus tới TextBox mật khẩu
+            //    txbMatKhau1.Focus();
+            //}
+        }
+
+        private void Enter(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void txbTenDangNhap1_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
