@@ -74,7 +74,9 @@
     <Compile Include="GUI\fBangDiemSV.Designer.cs">
       <DependentUpon>fBangDiemSV.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\fQuanLyCoVanHocTap.cs" />
+    <Compile Include="GUI\fQuanLyCoVanHocTap.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="GUI\fQuanLyCoVanHocTap.Designer.cs">
       <DependentUpon>fQuanLyCoVanHocTap.cs</DependentUpon>
     </Compile>

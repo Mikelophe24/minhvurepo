@@ -1,4 +1,7 @@
-﻿namespace QuanLyNhanVien.GUI
+﻿using System;
+using System.Windows.Forms;
+
+namespace QuanLyNhanVien.GUI
 {
     partial class fQuanLyLop
     {
@@ -28,6 +31,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnLamMoi = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
@@ -38,11 +42,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txbID = new System.Windows.Forms.TextBox();
             this.dgvLop = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -50,6 +49,11 @@
             this.numSoLuong = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLop)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -107,7 +111,6 @@
             this.txbTenLop.Name = "txbTenLop";
             this.txbTenLop.Size = new System.Drawing.Size(118, 26);
             this.txbTenLop.TabIndex = 2;
-            this.txbTenLop.TextChanged += new System.EventHandler(this.txtTenLop_TextChanged);
             // 
             // label3
             // 
@@ -117,7 +120,6 @@
             this.label3.Size = new System.Drawing.Size(76, 19);
             this.label3.TabIndex = 0;
             this.label3.Text = "TÊN LỚP:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txbMaLop
             // 
@@ -126,7 +128,6 @@
             this.txbMaLop.Name = "txbMaLop";
             this.txbMaLop.Size = new System.Drawing.Size(133, 26);
             this.txbMaLop.TabIndex = 1;
-            this.txbMaLop.TextChanged += new System.EventHandler(this.txtMaLop_TextChanged);
             // 
             // label2
             // 
@@ -136,7 +137,6 @@
             this.label2.Size = new System.Drawing.Size(71, 19);
             this.label2.TabIndex = 0;
             this.label2.Text = "MÃ LỚP:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txbID
             // 
@@ -146,12 +146,12 @@
             this.txbID.Name = "txbID";
             this.txbID.Size = new System.Drawing.Size(70, 26);
             this.txbID.TabIndex = 0;
-            this.txbID.TextChanged += new System.EventHandler(this.txtID_TextChanged);
             // 
             // dgvLop
             // 
             this.dgvLop.AllowUserToAddRows = false;
             this.dgvLop.AllowUserToDeleteRows = false;
+            this.dgvLop.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvLop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -167,45 +167,10 @@
             this.dgvLop.RowHeadersVisible = false;
             this.dgvLop.RowTemplate.Height = 30;
             this.dgvLop.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLop.Size = new System.Drawing.Size(777, 347);
+            this.dgvLop.Size = new System.Drawing.Size(825, 435);
             this.dgvLop.TabIndex = 1;
             this.dgvLop.TabStop = false;
-            this.dgvLop.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLop_CellContentClick);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 150;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "MÃ LỚP";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 160;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "TÊN LỚP";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 190;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "SỐ LƯỢNG";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 120;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "MÃ KHOA";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 120;
+            this.dgvLop.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLop_CellClick);
             // 
             // panel2
             // 
@@ -213,9 +178,8 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 100);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(777, 347);
+            this.panel2.Size = new System.Drawing.Size(825, 435);
             this.panel2.TabIndex = 5;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label1
             // 
@@ -225,10 +189,10 @@
             this.label1.Size = new System.Drawing.Size(28, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Khaki;
             this.panel1.Controls.Add(this.cmbMaKhoa);
             this.panel1.Controls.Add(this.numSoLuong);
             this.panel1.Controls.Add(this.label4);
@@ -246,26 +210,28 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(777, 100);
+            this.panel1.Size = new System.Drawing.Size(825, 100);
             this.panel1.TabIndex = 4;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // cmbMaKhoa
             // 
             this.cmbMaKhoa.FormattingEnabled = true;
-            this.cmbMaKhoa.Location = new System.Drawing.Point(111, 56);
+            this.cmbMaKhoa.Location = new System.Drawing.Point(88, 61);
             this.cmbMaKhoa.Name = "cmbMaKhoa";
             this.cmbMaKhoa.Size = new System.Drawing.Size(163, 27);
             this.cmbMaKhoa.TabIndex = 4;
-            this.cmbMaKhoa.SelectedIndexChanged += new System.EventHandler(this.cmbMaKhoa_SelectedIndexChanged);
             // 
             // numSoLuong
             // 
             this.numSoLuong.Location = new System.Drawing.Point(676, 8);
+            this.numSoLuong.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.numSoLuong.Name = "numSoLuong";
             this.numSoLuong.Size = new System.Drawing.Size(86, 26);
             this.numSoLuong.TabIndex = 3;
-            this.numSoLuong.ValueChanged += new System.EventHandler(this.numSoLuong_ValueChanged);
             // 
             // label4
             // 
@@ -275,23 +241,68 @@
             this.label4.Size = new System.Drawing.Size(93, 19);
             this.label4.TabIndex = 3;
             this.label4.Text = "SỐ LƯỢNG:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(18, 64);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 19);
+            this.label5.Size = new System.Drawing.Size(73, 19);
             this.label5.TabIndex = 0;
-            this.label5.Text = "MÃ KHOA:";
-            this.label5.Click += new System.EventHandler(this.label3_Click);
+            this.label5.Text = "Tên Khoa:";
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "id";
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column1.HeaderText = "ID";
+            this.Column1.MaxInputLength = 255;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 150;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "MaLop";
+            this.Column2.HeaderText = "MÃ LỚP";
+            this.Column2.MaxInputLength = 255;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 160;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "TenLop";
+            this.Column3.HeaderText = "TÊN LỚP";
+            this.Column3.MaxInputLength = 255;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 190;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "SoLuong";
+            this.Column4.HeaderText = "SỐ LƯỢNG";
+            this.Column4.MaxInputLength = 255;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 150;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "MaKhoa";
+            this.Column5.HeaderText = "MÃ KHOA";
+            this.Column5.MaxInputLength = 255;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 170;
             // 
             // fQuanLyLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(777, 447);
+            this.ClientSize = new System.Drawing.Size(825, 535);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -299,6 +310,7 @@
             this.Name = "fQuanLyLop";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý lớp";
+            this.Load += new System.EventHandler(this.fQuanLyLop_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLop)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -307,6 +319,8 @@
             this.ResumeLayout(false);
 
         }
+
+       
 
         #endregion
 
@@ -323,14 +337,14 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.NumericUpDown numSoLuong;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbMaKhoa;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
     }
 }

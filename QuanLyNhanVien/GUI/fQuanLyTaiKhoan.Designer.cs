@@ -54,6 +54,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Info;
             this.panel1.Controls.Add(this.cmbLoaiTaiKhoan);
             this.panel1.Controls.Add(this.btnLamMoi);
             this.panel1.Controls.Add(this.btnXoa);
@@ -69,7 +70,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(671, 100);
+            this.panel1.Size = new System.Drawing.Size(714, 100);
             this.panel1.TabIndex = 0;
             // 
             // cmbLoaiTaiKhoan
@@ -104,6 +105,7 @@
             this.btnXoa.TabStop = false;
             this.btnXoa.Text = "XÓA";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnSua
             // 
@@ -114,6 +116,7 @@
             this.btnSua.TabStop = false;
             this.btnSua.Text = "SỬA";
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -193,13 +196,14 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 100);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(671, 318);
+            this.panel2.Size = new System.Drawing.Size(714, 394);
             this.panel2.TabIndex = 1;
             // 
             // dgvTaiKhoan
             // 
             this.dgvTaiKhoan.AllowUserToAddRows = false;
             this.dgvTaiKhoan.AllowUserToDeleteRows = false;
+            this.dgvTaiKhoan.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvTaiKhoan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTaiKhoan.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -214,9 +218,10 @@
             this.dgvTaiKhoan.RowHeadersVisible = false;
             this.dgvTaiKhoan.RowTemplate.Height = 30;
             this.dgvTaiKhoan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvTaiKhoan.Size = new System.Drawing.Size(671, 318);
+            this.dgvTaiKhoan.Size = new System.Drawing.Size(714, 394);
             this.dgvTaiKhoan.TabIndex = 1;
             this.dgvTaiKhoan.TabStop = false;
+            this.dgvTaiKhoan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTaiKhoan_CellClick_1);
             // 
             // Column1
             // 
@@ -232,7 +237,7 @@
             this.Column2.HeaderText = "TÊN ĐĂNG NHẬP";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
-            this.Column2.Width = 120;
+            this.Column2.Width = 170;
             // 
             // Column3
             // 
@@ -240,7 +245,7 @@
             this.Column3.HeaderText = "MẬT KHẨU";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
-            this.Column3.Width = 150;
+            this.Column3.Width = 190;
             // 
             // Column4
             // 
@@ -248,13 +253,13 @@
             this.Column4.HeaderText = "LOẠI TÀI KHOẢN";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
-            this.Column4.Width = 180;
+            this.Column4.Width = 200;
             // 
             // fQuanLyTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(671, 418);
+            this.ClientSize = new System.Drawing.Size(714, 494);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -262,6 +267,7 @@
             this.Name = "fQuanLyTaiKhoan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý tài khoản";
+            this.Load += new System.EventHandler(this.fQuanLyTaiKhoan_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

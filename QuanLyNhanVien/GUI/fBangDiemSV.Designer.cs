@@ -56,11 +56,11 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtID = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtMaSV = new System.Windows.Forms.TextBox();
             this.txtMaMH = new System.Windows.Forms.TextBox();
             this.txtLoai = new System.Windows.Forms.TextBox();
+            this.txtMaSV = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numPhanTramThi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPhanTramLop)).BeginInit();
             this.panel2.SuspendLayout();
@@ -158,6 +158,7 @@
             this.txtDiemThi.Name = "txtDiemThi";
             this.txtDiemThi.Size = new System.Drawing.Size(61, 26);
             this.txtDiemThi.TabIndex = 6;
+            this.txtDiemThi.TextChanged += new System.EventHandler(this.txtDiemThi_TextChanged);
             // 
             // label9
             // 
@@ -257,6 +258,7 @@
             // 
             this.dgvDiem.AllowUserToAddRows = false;
             this.dgvDiem.AllowUserToDeleteRows = false;
+            this.dgvDiem.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvDiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDiem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -318,6 +320,7 @@
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.PapayaWhip;
             this.panel4.Controls.Add(this.numPhanTramThi);
             this.panel4.Controls.Add(this.numPhanTramLop);
             this.panel4.Controls.Add(this.label7);
@@ -355,36 +358,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Mã sinh viên";
             // 
-            // txtID
-            // 
-            this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(45, 15);
-            this.txtID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtID.MaxLength = 255;
-            this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(61, 26);
-            this.txtID.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 18);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(28, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ID:";
-            // 
-            // txtMaSV
-            // 
-            this.txtMaSV.Enabled = false;
-            this.txtMaSV.Location = new System.Drawing.Point(209, 21);
-            this.txtMaSV.Margin = new System.Windows.Forms.Padding(4);
-            this.txtMaSV.MaxLength = 255;
-            this.txtMaSV.Name = "txtMaSV";
-            this.txtMaSV.Size = new System.Drawing.Size(111, 26);
-            this.txtMaSV.TabIndex = 5;
-            // 
             // txtMaMH
             // 
             this.txtMaMH.Enabled = false;
@@ -405,17 +378,49 @@
             this.txtLoai.Size = new System.Drawing.Size(82, 26);
             this.txtLoai.TabIndex = 7;
             // 
+            // txtMaSV
+            // 
+            this.txtMaSV.Enabled = false;
+            this.txtMaSV.Location = new System.Drawing.Point(209, 21);
+            this.txtMaSV.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaSV.MaxLength = 255;
+            this.txtMaSV.Name = "txtMaSV";
+            this.txtMaSV.Size = new System.Drawing.Size(111, 26);
+            this.txtMaSV.TabIndex = 5;
+            // 
+            // txtID
+            // 
+            this.txtID.Enabled = false;
+            this.txtID.Location = new System.Drawing.Point(45, 15);
+            this.txtID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtID.MaxLength = 255;
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(61, 26);
+            this.txtID.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(18, 18);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(28, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ID:";
+            // 
             // fBangDiemSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(1087, 541);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fBangDiemSV";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý điểm";
+            this.Load += new System.EventHandler(this.fBangDiemSV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numPhanTramThi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numPhanTramLop)).EndInit();
             this.panel2.ResumeLayout(false);
