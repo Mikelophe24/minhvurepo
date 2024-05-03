@@ -170,7 +170,11 @@ namespace QuanLyNhanVien.GUI
             this.dgvLop.Size = new System.Drawing.Size(825, 435);
             this.dgvLop.TabIndex = 1;
             this.dgvLop.TabStop = false;
+<<<<<<< Updated upstream
             this.dgvLop.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLop_CellClick);
+=======
+            this.dgvLop.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLop_CellContentClick);
+>>>>>>> Stashed changes
             // 
             // panel2
             // 
@@ -298,6 +302,42 @@ namespace QuanLyNhanVien.GUI
             this.Column5.ReadOnly = true;
             this.Column5.Width = 170;
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 150;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "MÃ LỚP";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 160;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "TÊN LỚP";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Visible = false;
+            this.Column3.Width = 190;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "SỐ LƯỢNG";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 120;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "MÃ KHOA";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 120;
+            // 
             // fQuanLyLop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -341,10 +381,18 @@ namespace QuanLyNhanVien.GUI
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cmbMaKhoa;
+<<<<<<< Updated upstream
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
+=======
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+>>>>>>> Stashed changes
     }
 }
